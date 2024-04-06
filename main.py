@@ -3,7 +3,9 @@
 #input shift value
 #encrypt/decrypt
 
-def encrypt(msg, n):
+def encrypt():
+    msg=input("enter text: ")
+    n=int(input("enter shift value : "))
     e_msg=""
     length=len(msg)
     for i in range(length):
@@ -18,7 +20,9 @@ def encrypt(msg, n):
             e_msg+=chr(val % 26 + 97)
     print("\n"+"Encrypted text: "+e_msg+"\n")
 
-def decrypt(msg, n):
+def decrypt():
+    msg=input("enter text: ")
+    n=int(input("enter shift value : "))
     e_msg=""
     length=len(msg)
     for i in range(length):
@@ -34,17 +38,16 @@ def decrypt(msg, n):
     print("\n"+"Decrypted text: "+e_msg+"\n")
 
 def main():
-    str=input("enter text: ")
-    n=int(input("enter shift value : "))
+    
     while True:
         print("\n1.Encrypt")
         print("\n2.Decrypt")
         print("\n3.Exit")
         ch=int(input("enter your choice: "))
         if ch==1:
-            encrypt(str,n)
+            encrypt()
         elif ch==2:
-            decrypt(str,n)
+            decrypt()
         elif ch==3:
             break
         else:
